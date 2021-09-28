@@ -1,0 +1,39 @@
+<div class="mt-3" *ngFor="
+    let tag of tagList
+      | paginate
+        : {
+            itemsPerPage: 10,
+            currentPage: pageFeed,
+            totalItems: totalLength
+          }
+  ">
+  <div class="d-flex">
+    <div>
+      <a [routerLink]="['/profile', tag.author.username]">
+        <img [src]="tag.author.image" class="img-fluid" style="width: 50px; height: 50px; border-radius: 50%" />
+      </a>
+    </div>
+    <div style="margin-left: 20px">
+      <span [routerLink]="['/profile', tag.author.username]" class="text-success">{{ tag.author.username }}</span>
+      <br />
+      <span class="date">{{ tag.updatedAt | date: "dd/MM/yyyy" }}</span>
+    </div>
+    <div style="margin-left: auto">
+      <button class="btn btn-outline-success btn-sm pull-xs-right" (click)="onToggleFavorite(tag)">
+        <i class="bi bi-heart-fill"></i> {{ tag.favoritesCount }}
+      </button>
+    </div>
+  </div>
+  <a [routerLink]="['/editor/article', tag.slug]" class="preview-link">
+    <h2>{{ tag.title }}</h2>
+    <p>{{ tag.description }}</p>
+    <span translate>common.label.readmore</span>
+    <ul class="tag-list" style="float: right">
+      <li class="tag-default tag-pill tag-outline" *ngFor="let tag of tag.tagList">
+        {{ tag }}
+      </li>
+    </ul>
+  </a>
+  <hr />
+</div>
+<pagination-controls *ngIf="isShow" class="my-pagination" (pageChange)="pageFeed = $event"></pagination-controls>

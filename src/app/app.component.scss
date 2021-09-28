@@ -1,0 +1,25 @@
+.settings{
+    position: fixed;
+    top: 0%;
+    right: 2%;
+}
+
+select {
+    position: fixed;
+    top: 0%;
+    right: -50%;
+    margin-top: 10px;
+    transition: left 0.4s ease-out;
+}
+
+select.open {
+    z-index: 2000;
+    top: 5%;
+    right: 1%;
+    transition: left 0.6s ease-out;
+
+}
+
+mat-icon {
+    cursor: pointer;
+}

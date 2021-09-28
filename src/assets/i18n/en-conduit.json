@@ -1,0 +1,125 @@
+{
+  "common": {
+    "title": {
+      "home": "Home",
+      "signin": "Sign in",
+      "signup": "Sign up",
+      "new_post": "New Post",
+      "settings": "Settings",
+      "page_not_found": "Not found pages!",
+      "username": "Username",
+      "login": "Login"
+    },
+    "label": {
+      "submit": "Submit",
+      "email": "Email",
+      "password": "Password",
+      "update": "Update",
+      "logout": "Logout",
+      "lang": "setting language!",
+      "readmore": "Read more ...",
+      "auto_logout":"Time out!"
+    },
+    "message": {
+      "change_lang.success": "Change language successfully!",
+      "change_lang.error": "Change language failed!",
+      "update_success": "Update successfully!",
+      "email_password.error":"Email or password is invalid!"
+    },
+    "validate": {
+      "required": {
+        "email": "Email is required!",
+        "username": "Username is required",
+        "password": "Password is required!",
+        "fillin": "You need fill it up!"
+      },
+      "pattern": {
+        "email": "Email is invalid"
+      }
+    }
+  },
+  "auth": {
+    "title": {
+      "your_settings": "Your settings"
+    },
+    "label": {
+      "avartar": "Your avartar",
+      "bio": "Your bio"
+    },
+    "message": {
+      "login_success": "Login successfully!",
+      "signup_success": "Signup successfully!",
+      "update_success": "Update successfully!"
+    },
+    "validate": {
+      "required": {
+        "avartar": "Your avartar is required!"
+      },
+      "pattern": {}
+    }
+  },
+  "home": {
+    "title": {
+      "popular_tag": "Popular Tags"
+    },
+    "label": {
+      "your_feed": "Your Feed",
+      "global_feed": "Global Feed"
+    },
+    "message": {},
+    "validate": {
+      "required": {},
+      "pattern": {}
+    }
+  },
+  "profile": {
+    "title": {
+      "mypost": "My Post",
+      "favorite": "Favorite Post"
+
+    },
+    "label": {
+      "readmore": "Read more",
+      "edit": "Edit Profile Settings",
+      "follow": "Follow",
+      "unfollow": "Unfollow"
+    },
+    "message": {
+      "not-found": "No articles not found..."
+
+    },
+    "validate": {
+      "required": {},
+      "pattern": {}
+    }
+  },
+  "editor": {
+    "title": {},
+    "label": {
+      "title": "Article Title",
+      "description": "What's this article about?",
+      "body": "Write your acticle (in markdown)",
+      "tags": "Enter Tags",
+      "publish": "Publish Article",
+      "edit": "Edit Article",
+      "delete": "Delete Article",
+      "status": "Article",
+      "unfavorite": "Unfavorite",
+      "favorite": "Favorite",
+      "post": "Post Comment",
+      "comment": "Write a comment...",
+      "condition": "to add comments on this article."
+    },
+    "message": {
+      "publish_success": "Publish successfully!",
+      "update_success":"Update successfully!",
+      "delete_success": "Delete successfully!",
+      "post_success": "Post successfully!",
+      "delete_comment_success": "Delete comment successfully!"
+    },
+    "validate": {
+      "required": {},
+      "pattern": {}
+    }
+  }
+}

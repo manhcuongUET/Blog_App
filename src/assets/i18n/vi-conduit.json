@@ -1,0 +1,123 @@
+{
+  "common": {
+    "title": {
+      "home": "Trang chủ",
+      "signin": "Đăng nhập",
+      "signup": "Đăng kí",
+      "new_post": "Đăng bài",
+      "settings": "Cài đặt",
+      "page_not_found": "Không tìm thấy trang được yêu cầu!",
+      "username": "Tên người dùng",
+      "login": "Đăng nhập"
+    },
+    "label": {
+      "submit": "Gửi",
+      "email": "Địa chỉ Email",
+      "password": "Mật khẩu",
+      "update": "Cập nhật",
+      "logout": "Đăng xuất",
+      "lang": "Thiết lập ngôn ngữ!",
+      "readmore": "Đọc thêm...",
+      "auto_logout":" Hết thời gian đăng nhập! Vui lòng đăng nhập lại!"
+    },
+    "message": {
+      "change_lang.success": "Thay đổi ngôn ngữ thành công!",
+      "change_lang.error": "Thay đổi ngôn ngữ thất bại",
+      "update_success": "Cập nhật thành công!",
+      "email_password.error":"Email hoặc mật khẩu không hợp lệ!"
+    },
+    "validate": {
+      "required": {
+        "email": "Email không được để trống",
+        "username": "Tên đăng nhập không được để trống",
+        "password": " Mật khẩu không được bỏ trống",
+        "fillin": "Bạn cần đây đủ thông tin vào form!"
+      },
+      "pattern": {
+        "email": "Email không hợp lệ"
+      }
+    }
+  },
+  "auth": {
+    "title": {
+      "your_settings": "Thiết lập của bạn"
+    },
+    "label": {
+      "avartar": "Ảnh đại diện",
+      "bio": "Bio của bạn"
+    },
+    "message": {
+      "login_success": "Đăng nhập thành công!",
+      "signup_success": "Đăng kí tài khoản thành công!"
+    },
+    "validate": {
+      "required": {
+        "avartar": "Ảnh đại diện không được bỏ trống"
+      },
+      "pattern": {}
+    }
+  },
+  "home": {
+    "title": {
+      "popular_tag": "Thẻ phổ biến"
+    },
+    "label": {
+      "your_feed": "Bài đăng cá nhân",
+      "global_feed": "Bài đăng công khai"
+    },
+    "message": {},
+    "validate": {
+      "required": {},
+      "pattern": {}
+    }
+  },
+  "profile": {
+    "title": {
+      "mypost": "Bài viết của tôi",
+      "favorite": "Bài viết ưu thích"
+    },
+    "label": {
+      "readmore": "Xem thêm",
+      "edit": "Chỉnh sửa hồ sơ cá nhân",
+      "follow": "Theo dõi",
+      "unfollow": "Không theo dõi"
+    },
+    "message": {
+      "not-found": "Không tìm thấy bài viết..."
+
+    },
+    "validate": {
+      "required": {},
+      "pattern": {}
+    }
+  },
+  "editor": {
+    "title": {},
+    "label": {
+      "title": "Tiêu đề bài viết",
+      "description": "Chủ đề bài viết là gì?",
+      "body": "Viết bài của bạn (markdown)",
+      "tags": "Nhập thẻ (Enter)",
+      "publish": "Xuất bản bài viết",
+      "edit": "Sửa bài viết",
+      "delete": "Xoá bài viết",
+      "status": "bài viết",
+      "unfavorite": "Bỏ thích",
+      "favorite": "Yêu thích",
+      "post": "Đăng bình luận",
+      "comment": "Viết bình luận",
+      "condition": "để thêm ý kiến ​​về bài viết này."
+    },
+    "message": {
+      "publish_success": "Đăng bài thành công!",
+      "update_success": "Chỉnh sửa thành công!",
+      "delete_success": "Xoá bài viết thành công!",
+      "post_success": "Bình luận thành công!",
+      "delete_comment_success": "Xoá bình luận thành công!"
+    },
+    "validate": {
+      "required": {},
+      "pattern": {}
+    }
+  }
+}

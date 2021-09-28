@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-lg-6">
+      <h1 class="text-center h1" translate>auth.title.your_settings</h1>
+      <form [formGroup]="formUser" novalidate>
+        <div class="form-group">
+          <div>
+            <input type="text" id="image" placeholder="{{'auth.label.avartar' | translate}}" formControlName="image"
+              class="form-control" />
+            <p class="ps-2 alert-danger" *ngIf="f.image?.touched && f.image?.errors?.required" translate>
+              auth.validate.required.avartar
+            </p>
+          </div>
+        </div>
+        <div class="form-group my-2">
+          <div>
+            <input type="text" id="username" placeholder="{{'common.title.username' | translate}}"
+              formControlName="username" class="form-control" />
+            <p class="ps-2 alert-danger" *ngIf="(f.username?.touched  || isSubmit)&& f.username?.errors?.required"
+              translate>
+              common.validate.required.username
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea type="text" id="bio" formControlName="bio" rows="4" placeholder="{{'auth.label.bio' | translate}}"
+            class="form-control">
+          </textarea>
+        </div>
+        <div class="form-group my-2">
+          <div>
+            <input type="email" id="email" formControlName="email" placeholder="{{'common.label.email' | translate}}"
+              class="form-control" />
+            <p class="ps-2 alert-danger" *ngIf="f.email?.touched || isSubmit">
+              <span *ngIf="f.email?.errors?.required" translate> common.validate.required.email</span>
+              <span *ngIf="f.email?.errors?.pattern" translate> common.validate.pattern.email</span>
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <input type="password" id="password" formControlName="password"
+              placeholder="{{'common.label.password' | translate}}" class="form-control" />
+            <p class="ps-2 alert-danger" *ngIf="(f.password?.touched  || isSubmit)&& f.password?.errors?.required"
+              translate>
+              common.validate.required.password
+            </p>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <button class="btn btn-success mt-2" (click)="onUpdateUser()" translate>
+            common.label.update
+          </button>
+        </div>
+        <hr />
+        <div>
+          <button class="btn btn-primary" (click)="onLogout()" translate>common.label.logout</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

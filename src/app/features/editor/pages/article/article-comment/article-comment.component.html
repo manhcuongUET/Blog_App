@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-block">
+    <p class="card-text">
+      {{ commentUser.body }}
+    </p>
+  </div>
+  <div class="card-footer article-comment">
+    <a class="comment-author" [routerLink]="['/profile', commentUser?.author?.username]">
+      <img [src]="commentUser?.author?.image || 'assets/images/smiley-cyrus.jpg'" alt="author image"
+        class="comment-author-img" />
+    </a>
+    &nbsp;
+    <a class="comment-author" [routerLink]="['/profile', commentUser.author?.username]">
+      {{ commentUser?.author?.username }}
+    </a>
+    <span class="date-posted">
+      {{ commentUser?.createdAt | date: "longDate" }}
+    </span>
+    <span class="mod-options float-sm-end" style="cursor: pointer;" [hidden]="!isChange">
+      <i class="bi bi-trash" (click)="onDelete()"></i>
+    </span>
+  </div>
+</div>

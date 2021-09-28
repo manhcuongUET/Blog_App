@@ -1,0 +1,43 @@
+.alerts {
+  min-width: 250px;
+  line-height: 60px;
+  position: fixed;
+  right: 20px;
+  top: 100px;
+  min-height: 10px;
+  list-style-type: none;
+}
+
+@keyframes messages {
+  0% {
+    transform: translateY(50%);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.alerts li {
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0.5rem;
+  animation: messages 0.4s ease;
+}
+
+.alerts li.success {
+  background-color: green;
+  color: white;
+}
+
+.alerts li.error {
+  background-color: red;
+  color: white;
+}
+
+.alerts li.warning {
+  background-color: yellow;
+  color: black;
+}

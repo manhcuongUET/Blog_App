@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-lg-6">
+      <h2 class="h1 text-center" translate>common.title.signup</h2>
+      <form [formGroup]="formSignup" novalidate>
+        <div class="form-group">
+          <label for="username" translate>common.title.username</label>
+          <div>
+            <input type="text" formControlName="username" class="form-control" autocomplete="off" />
+            <p class="ps-2 alert-danger" *ngIf="(f.username?.touched || isSubmit) && f.username?.errors?.required"
+              translate>
+              common.validate.required.username
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" translate>common.label.email</label>
+          <div>
+            <input type="email" formControlName="email" class="form-control" autocomplete="off" />
+            <p class="ps-2 alert-danger" *ngIf="f.email?.touched || isSubmit">
+              <span *ngIf="f.email?.errors?.required" translate> common.validate.required.email</span>
+              <span *ngIf="f.email?.errors?.pattern" translate> common.validate.pattern.email</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password" translate>common.label.password</label>
+          <div>
+            <input type="password" formControlName="password" class="form-control" autocomplete="off" />
+            <p class="ps-2 alert-danger" *ngIf="(f.password?.touched  || isSubmit)&& f.password?.errors?.required"
+              translate>
+              common.validate.required.password
+            </p>
+          </div>
+        </div>
+        <div class="pt-2">
+          <button class="btn btn-success" (click)="onSubmitForm()" translate>
+            common.label.submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

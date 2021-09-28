@@ -1,0 +1,19 @@
+h1 {
+  cursor: pointer;
+}
+
+a {
+  color: black !important;
+}
+
+.active {
+  color: teal !important;
+  font-weight: 600;
+}
+.image-login{
+  display: inline-block;
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+  border-radius: 30px;
+}

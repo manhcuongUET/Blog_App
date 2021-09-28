@@ -1,0 +1,19 @@
+.banner {
+  background-color: #333;
+  color: #fff;
+  h1{
+    font-size: 2rem;
+  }
+}
+.img-card {
+  display: inline-block;
+  vertical-align: middle;
+  height: 32px;
+  width: 32px;
+  border-radius: 30px;
+}
+.fix {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

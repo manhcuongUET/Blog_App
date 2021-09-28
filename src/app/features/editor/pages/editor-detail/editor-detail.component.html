@@ -1,0 +1,47 @@
+<div class="editor-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-xs-12">
+        <form [formGroup]="articleForm">
+          <fieldset>
+            <fieldset class="form-group mb-3">
+              <input class="form-control form-control-lg fix" type="text" name="title" formControlName="title"
+                maxlength="100" placeholder="{{ 'editor.label.title' | translate }}" />
+              <div class="ps-2 alert-danger" *ngIf="
+                  articleForm.controls.title.errors?.required &&
+                  (articleForm.controls.title?.dirty ||
+                    articleForm.controls.title.touched || isSubmited)
+                ">
+                Please Enter Your Title!
+              </div>
+            </fieldset>
+
+            <fieldset class="form-group mb-3">
+              <input class="form-control fix" type="text" name="description" formControlName="description"
+                maxlength="150" placeholder="{{ 'editor.label.description' | translate }}" />
+            </fieldset>
+
+            <fieldset class="form-group mb-3">
+              <textarea class="form-control" name="body" formControlName="body" rows="7"
+                placeholder="{{ 'editor.label.body' | translate }}"></textarea>
+            </fieldset>
+
+            <fieldset class="form-group mb-3">
+              <input class="form-control" type="text" name="tags" [formControl]="tagField" (keyup.enter)="addTags()"
+                maxlength="50" placeholder="{{ 'editor.label.tags' | translate }}" />
+            </fieldset>
+            <div class="list-tag">
+              <span class="content-tag badge bg-secondary" *ngFor="let items of article.tagList">
+                <i class="bi bi-x-lg" (click)="removeTag(items)"></i>
+                {{ items }}
+              </span>
+            </div>
+            <button class="btn btn-lg float-sm-end btn-success" type="button" (click)="onSubmitForm()" translate>
+              editor.label.publish
+            </button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

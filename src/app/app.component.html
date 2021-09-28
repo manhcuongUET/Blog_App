@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="header">
+    <core-header></core-header>
+
+    <div class="setting-language">
+      <mat-icon class="settings" style="font-size: 40px" (click)="onToggleSettings()"
+        title="{{ 'common.label.lang' | translate }}">settings</mat-icon>
+      <select class="form-control" [ngClass]="{ open: isOpen }" style="width: 150px"
+        (change)="onChangeLang(select.value)" #select>
+        <option value="">Chọn ngôn ngữ</option>
+        <option value="vi">Việt Nam</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>
+<core-footer></core-footer>
+<message></message>
+<spinner></spinner>

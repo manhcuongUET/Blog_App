@@ -1,0 +1,18 @@
+<div class="article-meta">
+  <a [routerLink]="['/profile', article?.author?.username]">
+    <img [src]="article?.author.image || 'assets/images/smiley-cyrus.jpg'" />
+  </a>
+  <div class="info">
+    <div class="author-img">
+      <a class="author text-success" [routerLink]="['/profile', article?.author?.username]">
+        {{ article?.author?.username }}
+      </a>
+    </div>
+    <div class="author-date">
+      <span class="date">
+        {{ article?.createdAt | date: "longDate" }}
+      </span>
+    </div>
+  </div>
+  <ng-content></ng-content>
+</div>

@@ -1,0 +1,7 @@
+<ng-container *ngIf="message.length > 0">
+  <div class="message-container">
+    <ul class="alerts" #list>
+      <li  class="{{mess.type}}" *ngFor="let mess of message">{{mess.title}}</li>
+    </ul>
+  </div>
+</ng-container>

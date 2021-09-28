@@ -1,0 +1,9 @@
+<button class="btn btn-sm action-btn me-2" [ngClass]="{ 'disabled': isSubmitting,
+               'btn-outline-secondary': !profile?.following,
+               'btn-secondary': profile?.following }" (click)="toggleFollowing()">
+  <i class="fa fa-plus" aria-hidden="true"></i>
+  <!-- <i class="ion-plus-round" ></i> -->
+  &nbsp;
+  <span *ngIf="profile?.following" translate>profile.label.unfollow <span> {{ profile?.username }}</span> </span>
+  <span *ngIf="!profile?.following" translate>profile.label.follow <span> {{ profile?.username }}</span></span>
+</button>

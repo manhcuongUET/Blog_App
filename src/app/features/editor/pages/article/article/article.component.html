@@ -1,0 +1,105 @@
+<div class="article">
+  <div class="banner">
+    <div class="container">
+      <h1 class="fix">{{ article?.title }}</h1>
+      <div class="d-flex">
+        <app-article-meta [article]="article">
+          <span [hidden]="!isChange">
+            <a class="btn btn-sm btn-outline-secondary" [routerLink]="['/editor', article?.slug]" translate>
+              <i class="bi bi-pencil"></i>editor.label.edit
+            </a>
+            <button class="btn btn-sm btn-outline-danger ms-2" (click)="deleteArticle()" translate>
+              <i class="bi bi-trash"></i> editor.label.delete
+            </button>
+          </span>
+
+          <span [hidden]="isChange">
+            <app-follow-button [profile]="article?.author" (toggle)="onFollowing($event)">
+            </app-follow-button>
+
+            <app-favorite-button [article]="article" (toggle)="onFavorite($event)">
+              <ng-container *ngIf="article?.favorited">
+                <span class="ms-1 pe-1" translate>editor.label.unfavorite</span>
+              </ng-container>
+              <ng-container *ngIf="!article?.favorited">
+                <span class="ms-1 pe-1" translate>editor.label.favorite</span>
+              </ng-container>
+              <!-- <span >{{ ("'editor.label.unfavorite'" | translate) : ("'editor.label.favorite'" | translate) }}</span>  -->
+              <span translate>editor.label.status</span>
+              <span class="counter">({{ article?.favoritesCount }})</span>
+            </app-favorite-button>
+          </span>
+        </app-article-meta>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row article-content">
+      <div class="col-md-12">
+        <div class="markdown" [innerHTML]="article?.body | markdown"></div>
+
+        <ul class="tags">
+          <li class="tag-default tag-pill tag-outline" *ngFor="let items of article?.tagList">
+            {{ items }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="col-xs-12 col-md-8 offset-md-2">
+        <div class="article-actions d-flex justify-content-center mb-5 mt-3">
+          <app-article-meta [article]="article">
+            <span [hidden]="!isChange">
+              <a class="btn btn-sm btn-outline-secondary" [routerLink]="['/editor', article?.slug]" translate>
+                <i class="bi bi-pencil"></i> editor.label.edit
+              </a>
+              <button class="btn btn-sm btn-outline-danger ms-2" (click)="deleteArticle()" translate>
+                <i class="bi bi-trash"></i> editor.label.delete
+              </button>
+            </span>
+          </app-article-meta>
+
+          <span [hidden]="isChange">
+            <app-follow-button [profile]="article?.author" (toggle)="onFollowing($event)">
+            </app-follow-button>
+
+            <app-favorite-button [article]="article" (toggle)="onFavorite($event)">
+              {{ article?.favorited ? "Unfavorite" : "Favorite" }} Article
+              <span class="counter">({{ article?.favoritesCount }})</span>
+            </app-favorite-button>
+          </span>
+        </div>
+
+        <form class="card" (ngSubmit)="addComment()">
+          <fieldset>
+            <div class="card-block">
+              <textarea class="form-control" placeholder="{{ 'editor.label.comment' | translate }}" name="comment"
+                rows="3" [formControl]="commentControl">
+              </textarea>
+            </div>
+            <div class="card-footer">
+              <img class="img-card" [src]="currentUser?.image || 'assets/images/smiley-cyrus.jpg'" alt="user image" />
+              <button class="btn btn-sm btn-success float-sm-end" type="submit" translate>
+                editor.label.post
+              </button>
+            </div>
+          </fieldset>
+        </form>
+
+        <!-- <div *appShowAuthed="false">
+          <a [routerLink]="['/login']" translate>common.title.signup</a> or
+          <a [routerLink]="['/register']" translate>common.title.signup</a>
+          editor.label.condition
+        </div> -->
+
+        <app-article-comment *ngFor="let items of comments" [commentUser]="items"
+          (deleteComment)="deleteCommentArticle(items)">
+        </app-article-comment>
+      </div>
+    </div>
+  </div>
+</div>
